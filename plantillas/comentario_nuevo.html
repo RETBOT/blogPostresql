@@ -1,0 +1,12 @@
+<!-- plantillas/comentario_nuevo.html -->
+{% extends 'base.html' %}
+{% block title %}- Comentar{% endblock title %}
+
+{% block content %}
+    <h1>Comentar</h1><br>
+    <form method="post">{% csrf_token %}
+        {{ form.as_p }}
+        <input class="btn btn-success ml-2" type="submit" value="Comentar" style="color: black;">
+    </form>
+    <br>
+{% endblock content %}

@@ -1,0 +1,14 @@
+<!-- plantillas/registration/login.html -->
+{% extends 'base.html' %}
+{% block title %}- Acceso{% endblock title %}
+
+{% block content %}
+<h1>Bienvenido</h1>
+    <h2>Iniciar Sesión</h2><br>
+    <form method="post">{% csrf_token %}
+        {{ form.as_p }}
+        <input class="btn btn-success ml-2" type="submit" value="Acceder (Iniciar Sesión)" style="color: black;">
+    </form>
+    <br>
+    <a href="{% url 'password_reset' %}" type="button" class="formulario__submit" style="color: black;">¿Olvido su contraseña?</a>
+{% endblock content %}
