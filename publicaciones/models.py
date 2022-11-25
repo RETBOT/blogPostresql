@@ -18,3 +18,22 @@ class Publicacion(models.Model):
   def get_absolute_url(self):
     return reverse('detalle_publicacion',args=[str(self.id)])
   
+class Comentario(models.Model):
+  titulo = models.ForeignKey(
+      Publicacion, 
+      on_delete=models.CASCADE,
+      related_name='comentarios',
+  )
+  
+  autor = models.ForeignKey(
+      get_user_model(),
+      on_delete=models.CASCADE,
+  )
+
+  comentario = models.TextField()
+
+  def __str__(self):
+    return self.comentario
+    
+  def get_absolute_url(self):
+    return reverse("lista_publicaciones")

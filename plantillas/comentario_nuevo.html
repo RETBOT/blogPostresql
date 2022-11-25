@@ -4,6 +4,7 @@
 
 {% block content %}
     <h1>Comentar</h1><br>
+    <p>{{ pub.titulo }}</p>
     <form method="post">{% csrf_token %}
         {{ form.as_p }}
         <input class="btn btn-success ml-2" type="submit" value="Comentar" style="color: black;">

@@ -10,7 +10,6 @@
 </div>
 
   {% for pub in object_list %}
-
   <div class="col-md-12">
     <div class="card flex-md-row mb-3 box-shadow h-md-270">
       <div class="card-body d-flex flex-column align-items-center">
@@ -22,14 +21,13 @@
       </div>
     </div>
     <div class="card-footer text-center text-muted">
-      <a href="{% url 'detalle_publicacion' pub.pk %}">Ver publicacion</a> |
-      <a href="{% url 'comentario_nuevo' pub.pk %}">Comentar</a>
+      <a href="{% url 'detalle_publicacion' pub.pk %}">Ver publicacion</a> 
     </div>
     <div class="card-footer">
-      {% for comentario in pub.comentarios.all %}
+      {% for com in pub.comentarios.all %}
           <p>
-              <span class="font-weight-bold">{{ comentario.autor }} &middot;</span>
-              {{ comentario }}
+              <span class="font-weight-bold">{{ com.autor }} &middot;</span>
+              {{ com }}
           </p>
           <br>
       {% endfor %}

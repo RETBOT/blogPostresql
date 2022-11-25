@@ -25,6 +25,7 @@
 <div class="card-footer text-center text-muted">
   <a href="{% url 'editar_publicacion' pub.pk %}">Editar</a> |
   <a href="{% url 'eliminar_publicacion' pub.pk %}">Eliminar</a> |
+  <a href="{% url 'comenario_nuevo' object.pk %}">Comentar</a> |
   <a href="{% url 'lista_publicaciones' %}">Volver a Publicaciones</a>
 </div>
 <div class="card-footer">
