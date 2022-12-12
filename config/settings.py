@@ -162,7 +162,7 @@ CRISPY_ALLOWED_TEMPLATE_PACKS = 'bootstrap5'
 CRISPY_TEMPLATE_PACK = 'bootstrap5'
 
 # FACEBOOK
-ACCOUNT_DEFAULT_HTTP_PROTOCOL = 'http'
+ACCOUNT_DEFAULT_HTTP_PROTOCOL = 'https'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
@@ -181,28 +181,27 @@ SITE_ID = 1
 
 # Provider specific settings
 SOCIALACCOUNT_PROVIDERS = {
-    'facebook': {
-        'METHOD': 'oauth2',
-        'SDK_URL': '//connect.facebook.net/{locale}/sdk.js',
-        'SCOPE': ['email', 'public_profile'],
-        'AUTH_PARAMS': {'auth_type': 'reauthenticate'},
-        'INIT_PARAMS': {'cookie': True},
+    'facebook': {  
+        'METHOD': 'oauth2',                                                                        
+        'SCOPE': ['email', 'public_profile', 'user_friends'],
+         'AUTH_PARAMS': {'auth_type': 'reauthenticate'},
         'FIELDS': [
-            'id',
-            'first_name',
-            'last_name',
-            'middle_name',
-            'name',
-            'name_format',
-            'picture',
-            'short_name'
-        ],
-        'EXCHANGE_TOKEN': True,
-        'LOCALE_FUNC': 'path.to.callable',
-        'VERIFIED_EMAIL': False,
-        'VERSION': 'v13.0',
-        'GRAPH_API_URL': 'https://graph.facebook.com/v13.0',
-    }
+             'id',                                                                                   
+             'email',                                                                                
+             'name',                                                                                 
+             'first_name',                                                                           
+             'last_name',                                                                            
+             'verified',                                                                            
+             'locale',                                                                               
+             'timezone',                                                                             
+             'link',                                                                                 
+             'gender',                                                                               
+             'updated_time' ],                                                                       
+         'EXCHANGE_TOKEN': True,                                                                     
+         #  'LOCALE_FUNC': 'path.to.callable',                                                       
+         'VERIFIED_EMAIL': False,                                                                    
+         'VERSION': 'v2.8'
+         } 
 }
 
 AUTHENTICATION_BACKENDS = [
@@ -211,4 +210,8 @@ AUTHENTICATION_BACKENDS = [
 
     # `allauth` specific authentication methods, such as login by e-mail
     'allauth.account.auth_backends.AuthenticationBackend',
+    'social_core.backends.facebook.Facebook0Auth2',
 ]
+
+SOCIAL_AUTH_FACEBOOK_KEY = '2969744020001483'
+SOCIAL_AUTH_FACEBOOK_SECRET = 'a2ea86bf33ff88f98489c3300e7782d0'
