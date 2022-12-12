@@ -56,10 +56,8 @@ class VisaNuevoComentarioEnPublicacion(CreateView):
     model = Comentario
     template_name = 'comentario_nuevo.html'
     context_object_name = 'comen'
-    fields = ['comentario',]
+    fields = ['titulo','comentario',]
 
     def form_valid(self, form):
-        obj = self.get_object()
-        form.instance.titulo = obj.titulo
         form.instance.autor = self.request.user
         return super().form_valid(form)
