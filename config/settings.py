@@ -210,7 +210,6 @@ AUTHENTICATION_BACKENDS = [
 
     # `allauth` specific authentication methods, such as login by e-mail
     'allauth.account.auth_backends.AuthenticationBackend',
-    'social_core.backends.facebook.Facebook0Auth2',
 ]
 
 SOCIAL_AUTH_FACEBOOK_KEY = '2969744020001483'

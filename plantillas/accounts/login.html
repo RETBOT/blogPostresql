@@ -2,7 +2,7 @@
 {% extends 'base.html' %}
 
 {% load socialaccount %}
-
+{% load crispy_forms_tags %}
 
 {% block title %}- Acceso{% endblock title %}
 
@@ -10,7 +10,7 @@
 <h1>Bienvenido</h1>
     <h2>Iniciar Sesión</h2><br>
     <form method="post">{% csrf_token %}
-        {{ form.as_p }}
+        {{ my_formset|crispy }}
         <input class="btn btn-success ml-2" type="submit" value="Acceder (Iniciar Sesión)" style="color: black;">
     </form>
     <br>
