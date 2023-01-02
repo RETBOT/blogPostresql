@@ -1,9 +1,10 @@
+# by: RETBOT
 #cuentas/admin.py
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 from .forms import FormularioCambioUsuario, FormularioCreacionUsuario
 from .models import UsuarioPers
-
+# by: RETBOT
 # Register your models here.
 class UsuarioPersAdmin(UserAdmin):
     add_form = FormularioCreacionUsuario
@@ -18,3 +19,4 @@ class UsuarioPersAdmin(UserAdmin):
     )
 
 admin.site.register(UsuarioPers, UsuarioPersAdmin)
+# by: RETBOT
