@@ -1,4 +1,5 @@
 # publicaciones/urls.py
+# by: RETBOT
 from django.urls import path
 from .views import (
     VistaListaPublicaciones,
@@ -10,7 +11,7 @@ from .views import (
     # Comentarios
     VisaNuevoComentarioEnPublicacion,
     )
-
+# by: RETBOT
 urlpatterns = [
     path('',VistaListaPublicaciones.as_view(), name='lista_publicaciones'),
     # Publicaciones 
@@ -22,3 +23,4 @@ urlpatterns = [
     #Comentarios 
     path('comentario/publicacion/<int:pk>/', VisaNuevoComentarioEnPublicacion.as_view(), name='comenario_nuevo')
     ]    
+# by: RETBOT
