@@ -1,4 +1,5 @@
 #publicaciones/views.py
+# by: RETBOT
 from django.views.generic import ListView, DetailView
 from django.views.generic.edit import DeleteView, UpdateView, CreateView
 from django.urls import reverse_lazy
@@ -24,7 +25,7 @@ class VistaCrearPublicacion(LoginRequiredMixin, CreateView):
     def form_valid(self, form):
         form.instance.autor = self.request.user
         return super().form_valid(form)
-
+# by: RETBOT
 class VistaDetallePublicacion(DetailView):
   model = Publicacion
   template_name = 'detalle_publicacion.html'
@@ -39,7 +40,7 @@ class VistaEditarPublicacion(LoginRequiredMixin, UserPassesTestMixin, UpdateView
     def test_func(self):
         obj = self.get_object()
         return obj.autor == self.request.user
-    
+    # by: RETBOT
 class VistaEliminarPublicacion(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     model = Publicacion
     template_name = 'eliminar_publicacion.html'
@@ -61,3 +62,5 @@ class VisaNuevoComentarioEnPublicacion(CreateView):
     def form_valid(self, form):
         form.instance.autor = self.request.user
         return super().form_valid(form)
+    
+# by: RETBOT
