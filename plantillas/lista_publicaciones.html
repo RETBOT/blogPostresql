@@ -1,4 +1,5 @@
 <!-- plantillas/lista_publicaciones.html -->
+<!-- by: RETBOT -->
 {% extends 'base.html' %}
 
 {% block title %} - Publicaciones {% endblock title %}
@@ -19,7 +20,7 @@
         </h3>
         <p class="card-text mb-auto">{{ pub.cuerpo }} </a>
       </div>
-    </div>
+    </div><!-- by: RETBOT -->
     <div class="card-footer text-center text-muted">
       <a href="{% url 'detalle_publicacion' pub.pk %}">Ver publicacion</a> 
     </div>
@@ -35,3 +36,4 @@
   </div>
   {% endfor %}
 {% endblock content %}    
+<!-- by: RETBOT -->
