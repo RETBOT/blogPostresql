@@ -1,4 +1,5 @@
 # Obtener imagen base
+# by: RETBOT
 FROM --platform=linux/amd64 python:3.10.9-slim-buster
 
 # Establecer las variables de entorno 
@@ -8,10 +9,11 @@ ENV PYTHONUNBUFFERED 1
 
 # Establecer direcorio de trabajo
 WORKDIR /code
-
+# by: RETBOT
 # Instalar dependencias
 COPY ./requirements.txt .
 RUN pip install -r requirements.txt
 
 # Copiar proyecto
 COPY . .
+# by: RETBOT
